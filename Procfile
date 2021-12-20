@@ -1,2 +1,2 @@
-web: gunicorn healthcare.wsgi --log-file- 
+web: gunicorn healthcare.wsgi --log-file - 
 
