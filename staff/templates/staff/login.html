@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% if page == 'log' %}
+
+
+
+<!-- <div class="jumbotron jumbotron-fluid">
+  <div>
+    <div class="container container--narrow">
+      <div>
+        <h2 style="color:#414042; font-weight:450">Staff Login Portal</h2>
+      </div>
+      <div>
+        <h4 style="color:#414042; font-weight:250">Login to your Account</h4>
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<div class="jumbotron jumbotron-fluid" style="margin-bottom:0px; padding-top:25px; padding-bottom:25px;">
+  <div class="auth__header text-center">
+    <a href="/">
+      <img src="" alt="" />
+    </a>
+    <h1 style="color:#414042; font-weight:450">Staff Login Portal</h1>
+    <p style="color:#414042; font-weight:250">Hello User, Welcome Back!</p>
+  </div>
+</div>
+
+  <div class="card" style="margin:30px 500px 100px 500px;">
+    <form action="" class="form auth__form" style="margin:30px 50px 30px 50px;" method="post">
+      {% csrf_token %}
+      <!-- Input:Email -->
+      <div class="form__field">
+        <label for="formInput#text">Username: </label>
+        <input class="input input--text" id="formInput#text" type="text" name="username"
+          placeholder="Enter your username..." />
+      </div>
+
+      <!-- Input:Password -->
+      <div class="form__field">
+        <label for="formInput#password">Password: </label>
+        <input class="input input--password" id="formInput#passowrd" type="password" name="password"
+          placeholder="••••••••" />
+      </div>
+      <div class="auth__actions">
+        <input class="btn btn--sub btn--lg" style="margin-right: 100px" id="homebtn"type="submit" value="Log In" />
+        <a href="#">Forget Password?</a>
+      </div>
+    </form>
+  </div>
+
+
+{% endif %} {% endblock %}

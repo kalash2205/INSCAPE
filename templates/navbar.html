@@ -1,0 +1,145 @@
+{% load static %}
+
+<!-- <h1>navbar it is</h1> -->
+
+<header>
+
+
+  <div style="background-color:#040A27;">
+    <nav style="display:block" class="navbar navbar-expand-lg ">
+
+      <div class="row container-fluid">
+        
+
+        <div class="col" style="text-align: center">
+            <a class="navbar-brand" id="myhover" style="color:#fff; margin-left: 50px" onmouseover="this.style.color='#5AA5B9'"
+            onmouseout="this.style.color='#fff'" href="{% url 'home' %}"><div class="">| CONTACT US | </div></a>
+       
+          <a class="navbar-brand" id="myhover" style="color:#fff" onmouseover="this.style.color='#5AA5B9'"
+            onmouseout="this.style.color='#fff'" href="{% url 'contact' %}"><div style="padding-left:25px; padding-right:25px;">| EMERGENCY CALL: 123456789 | </div></a>
+
+            <a class="navbar-brand" id="myhover" style="color:#fff; margin-right: 93px" onmouseover="this.style.color='#5AA5B9'"
+            onmouseout="this.style.color='#fff'" href="{% url 'home' %}"><div class="">| ADMIN PORTAL |</div></a>
+       
+        </div>
+
+        
+      </div>
+    </nav>
+  </div>
+
+
+  <nav style="display:block" class="navbar navbar-expand-lg">
+    <div class="row container-fluid">
+        <div class="col">
+            <a class="navbar-brand" href="{% url 'home' %}" style="margin-left:30px;">
+                <img id="logo" src="{% static 'images/apple-touch-icon.png' %}" />
+                <br />
+                <h3 style="color:#414042">InScape</h3>
+            </a>
+
+
+        </div>
+        <div class="col">
+
+            <div class="navbar-collapse collapse">
+                <ul class="navbar-nav ml-auto pl-md-5">
+                    <li class="nav-item">
+                        <a class="navbar-brand" style="font-size:16.6px;color:#414042; margin: 0px 10px;" href="{% url 'staffs' %}">Find a
+                            Doctor</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a style="font-size:16.6px ;color:#414042; margin: 0px 10px;" class="navbar-brand nav-link dropdown-toggle" href=""
+                            id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{% url 'creator' %}">Creator</a></li>
+                            <li><a class="dropdown-item" href="">Our Divisions</a></li>
+                            <li><a class="dropdown-item" href="#">Support Team</a></li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="navbar-brand nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="font-size:16.6px; margin: 0px 10px;color:#414042">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{% url 'spec' %}">Specialities</a></li>
+                            <li><a class="dropdown-item" href="{% url 'lab' %}">Laboratories</a></li>
+                            <li><a class="dropdown-item" href="{% url 'pharma' %}">Pharmacy</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a style="font-size:16.6px; color:#414042; margin: 0px 10px;" class="navbar-brand nav-link dropdown-toggle"
+                            href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            For Health<br />Professionals
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" href="{% url 'log' %}">Login</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Resources</a></li>
+                            <!-- <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li> -->
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a style="font-size:16.6px; color:#414042; margin: 0px 10px;" class="navbar-brand nav-link dropdown-toggle"
+                            href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            For Patients<br />and Visitors
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" href="{% url 'login' %}">login</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'register' %}">Register Yourself</a>
+                            </li>
+                            <!-- <li>
+                                <a class="dropdown-item" href="">Book an Appointment</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+        <div class="col">
+            
+            {%if request.user.is_authenticated %}
+            <ul class="navbar-nav ml-auto pl-md-5">
+
+                <li class="nav-item dropdown"  style="margin-left: 165px;">
+                    <a style="font-size:16.6px; color:#414042" id="navbarDarkDropdownMenuLink" role="button"
+                        href="{% url 'account' %}" class="navbar-brand nav-link">Account</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a style="font-size:16.6px; color:#414042" id="navbarDarkDropdownMenuLink" role="button"
+                        href="{% url 'logout' %}" class="navbar-brand nav-link">Logout</a>
+                </li>
+            </ul>
+            {% endif %}
+
+            
+
+        </div>
+    </div>
+</nav>
+
+
+  
+
+
+</header>

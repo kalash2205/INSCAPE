@@ -1,0 +1,53 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<!-- <h1>edit account</h1>
+
+<form method="post" action="{% url 'edit-account' %}", enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Submit">
+</form> -->
+
+
+
+
+
+
+
+
+
+<!-- Main Section -->
+
+<div class="jumbotron jumbotron-fluid" style="margin-bottom:0px; padding-top:25px; padding-bottom:25px;">
+    <div class="auth__header text-center">
+        <a href="/">
+            <img src="" alt="" />
+        </a>
+        <h2 style="color:#414042; font-weight:450; padding-bottom:25px">Edit Account Details</h2>
+
+    </div>
+</div>
+
+
+<div class="card" style="margin:30px 300px 100px 300px;">
+    <a class="backButton" href="{% url 'account' %}"><i class="im im-angle-left"></i></a>
+    <br>
+
+    <form action="" class="form auth__form" style="margin:30px 50px 30px 50px;" method="post" autocomplete="off">
+        {%csrf_token%}
+        {% for field in form %}
+        <div class="form__field">
+            <label for="formInput#text">{{field.label}}</label>
+            {{field}}
+        </div>
+        {% endfor %}
+        <div class="auth__actions">
+            <input class="btn btn--sub btn--lg" style="margin-right: 300px" id="homebtn" type="submit" value="Submit" />
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

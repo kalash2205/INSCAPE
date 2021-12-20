@@ -1,0 +1,84 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<main class="projects">
+
+  <div class="jumbotron jumbotron-fluid">
+    <div>
+      <div class="container container--narrow">
+        <div>
+          <h2 style="color:#414042; font-weight:450; text-align:center;">Find a Doctor</h2>
+        </div>
+        <div class="hero-section__search">
+          <form id="searchform" class="form" action="{% url 'staffs' %}" method="get" autocomplete="off">
+            <div class="form__field" style="display: flex;">
+              <!-- <label for="formInput#search">
+                  Search By Name/Category/Speciality
+              </label> -->
+              <input class="input input--text" id="formInput#search" type="text" name="search_query"
+                value="{{search_query}}" style="border-radius: 5px 0px 0px 5px; height:100%; width: 80%"
+                placeholder="Search by Name/Category/Speciality" />
+              <input id="homebtn" class="btn btn--sub btn--lg" style="border-radius: 0px 5px 5px 0px; height:100%"
+                type="submit" value="Search" />
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <section class="devlist"> -->
+
+  <div class="container">
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="text-align:center;">
+      {% for staff in staffs %}
+      <div class="col ">
+        <div class="card h-100" style="padding:20px;">
+          <div class="" style="display:flex;">
+            <!-- <div class="col"> -->
+            
+              <img src="{{staff.imageurl}}" class="card-img-top avatar avatar--md" alt="image">
+              <!-- </div> -->
+
+              <!-- <div class="col"> -->
+              <div class="card-body dev__meta">
+                <h5 class="card-title" style="text-align: center;"><a href="{% url 'staff' staff.id %}">{{staff.name.upper}}</a></h5>
+                <p class="card-text">{{staff.highest_degree}}</p>
+              </div>
+              <!-- </div> -->
+            
+
+          </div>
+          <hr>
+          <div class="dev__skills" style="text-align: left-justify;">
+            {% for specialities in staff.specialities_set.all %}
+            <span class="tag tag--pill tag--main">
+              <small>{{specialities.sname}}</small>
+            </span>
+            {% endfor %}
+          </div>
+          <!-- <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div> -->
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+  </section>
+
+  {% include 'pagination.html' with queryset=staffs %}
+</main>
+
+{% endblock %}
+
+
+
+

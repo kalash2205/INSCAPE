@@ -1,0 +1,111 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- <header class="">
+    <div class="px-row">
+        <div class="px-s3-col-9">
+            <a class="tag tag--pill tag--main settings__btn" href="{% url 'edit-acc' %}"><i class="im im-edit">Edit
+                    Profile</i> </a>
+            <div class="details">
+                <h1 class="doctorname"><span>{{staff.name}}</span></h1>
+                <span>INTRO: {{staff.intro}} </span>
+                <span>ABOUT: {{staff.about}}</span>
+                <span>QUALIFICATION: {{staff.qualification}}</span>
+
+            </div>
+        </div>
+        <div class="px-s3-col-9">
+            <img src="{{staff.imageurl}}}">
+        </div>
+    </div>
+</header>
+
+<div class="">
+    <section class="">
+        <h2>Credentials</h2><br>
+        <h3>Certificates</h3>
+        <p>Blabla</p>
+        <h3>Education and training</h3>
+    </section>
+    <section class="">
+        <h2>Academics and publications</h2>
+        <p>Cillum voluptate sunt ex exercitation amet duis labore minim sint. Aliqua consequat qui id incididunt veniam
+            aute laborum laboris dolor qui commodo. Labore incididunt in aliqua nulla minim mollit voluptate nisi
+            consectetur do cillum cupidatat ullamco. Enim nostrud occaecat enim esse sint velit exercitation.</p>
+    </section>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<main class="profile my-md">
+    <div class="container">
+        <div class="layout">
+            <div class="column column--1of3">
+                <div class="card text-center">
+                    <div class="card__body dev">
+
+                        <a class="tag tag--pill tag--main settings__btn" href="{% url 'edit-acc' %}">
+                            <i class="im im-edit"></i> Edit account
+                        </a>
+                        <img class="avatar--xl" src="{{staff.imageurl}}" />
+                        <!-- <i class="far fa-user"></i> -->
+                        <h2 class="dev__name">{{staff.name}}</h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="column column--2of3">
+                <div class="devInfo">
+                    <h3 class="devInfo__title">Account Details</h3>
+                    <p class="devInfo__about">{{staff.bio}}
+                    </p>
+                </div>
+
+                <!-- <div class="devInfo">
+                    <h3 class="devInfo__title">Appointments</h3>
+
+                </div> -->
+                <div class="settings">
+                    <h3 class="settings__title">Specialities</h3>
+
+                </div>
+
+                <table class="settings__table">
+                    {% for specialities in specialitiess %}
+                    <tr>
+                        <td class="settings__tableInfo">
+                            <h4>{{specialities.sname}}</h4>
+                            <p>
+
+                            </p>
+                        </td>
+
+                    </tr>
+                    {% endfor %}
+
+                </table>
+                
+
+                
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+{% endblock %}
