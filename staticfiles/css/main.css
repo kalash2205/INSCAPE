@@ -1,0 +1,77 @@
+#home1 {
+  background-image: url("../images/home1.jpg");
+  background-size: cover;
+  width: -webkit-fill-available;
+}
+
+#homebtn {
+  background-color:#004E25;
+  color:aliceblue;
+  
+   /* margin: 500px 0px 100px 60px; */
+}
+#homebtn:hover {
+  background-color: #016932;
+}
+
+.error{
+  -moz-box-align: center;
+  opacity: 0;
+  
+}
+
+#logo{
+  height: 80px;
+  width: 80px;
+}
+
+#lab{
+  background-image: url("../images/banner-lab.jpg");
+  background-size: cover;
+  width: -webkit-fill-available;
+  padding-top:250px;
+}
+
+#pharma{
+  background-image: url("../images/banner-pharmacy-technician.jpg");
+  background-size: cover;
+  width: -webkit-fill-available;
+  padding-top:190px;
+}
+
+#spec{
+  background-image: url("../images/spec.png");
+  background-size: cover;
+  width: -webkit-fill-available;
+  padding-top:150px;
+  padding-bottom:250px;
+}
+
+.vl{
+            border-left: 1px solid white;
+            height: 20px;
+            
+           
+}
+
+
+
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: 0.3rem;
+}
+
+@media (min-width: 576px) {
+  .jumbotron {
+    padding: 4rem 2rem;
+  }
+}
+
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 0;
+}
